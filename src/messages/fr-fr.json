@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Polar.is",
+    "description": "Vos données d'entraînement. Enfin claires."
+  },
+  "nav": {
+    "features": "fonctionnalités",
+    "dashboard": "tableau de bord",
+    "getStarted": "commencer"
+  },
+  "landing": {
+    "hero": {
+      "badge": "compatible avec toutes les montres Polar",
+      "heading": "Vos données d'entraînement. Enfin claires.",
+      "description": "Polar.is simplifie les données de votre appareil Polar en une vue quotidienne magnifique — sommeil, récupération, charge et tendances en un coup d'œil.",
+      "ctaPrimary": "connecter votre Polar →",
+      "ctaSecondary": "voir une démo"
+    },
+    "features": {
+      "title": "pourquoi polar.is",
+      "heading": "Conçu pour les athlètes qui se soucient de leurs chiffres",
+      "description": "Polar Flow vous montre tout. polar.is vous montre l'essentiel.",
+      "trendView": {
+        "title": "Vue tendance 30 jours",
+        "description": "HRV, sommeil et charge sur un seul écran. Repérez les patterns que Polar Flow cache dans les menus."
+      },
+      "zoneClarity": {
+        "title": "Clarté des zones",
+        "description": "Chaque session taguée zone 1 ou zone 3. Voyez votre équilibre d'entraînement polarisé en un coup d'œil."
+      },
+      "sleepRecovery": {
+        "title": "Sommeil × récupération",
+        "description": "Recharge nocturne et HRV corrélées automatiquement. Sachez si vous devez pousser ou vous reposer."
+      },
+      "coachDashboard": {
+        "title": "Tableau de bord coach",
+        "description": "Surveillez tous vos athlètes en une vue. Liens de readiness partageables."
+      }
+    },
+    "comparison": {
+      "title": "comparaison",
+      "heading": "Polar Flow vs polar.is",
+      "description": "Ce que vous obtenez en allant au-delà du défaut",
+      "items": [
+        { "from": "Score de sommeil = nombre unique", "to": "Corrélation avec charge d'entraînement, HRV, dette de récupération" },
+        { "from": "Recharge nocturne enfouie dans les menus", "to": "Briefing matinal avec anneau de readiness + recommandation" },
+        { "from": "Activité = graphique à barres de pas", "to": "Équilibre récupération vs activité avec suivi de dette" },
+        { "from": "Entraînements = événements isolés", "to": "Trajectoire de fitness sur des mois" },
+        { "from": "Zones FC = par entraînement uniquement", "to": "Distribution hebdomadaire sur toutes les activités" },
+        { "from": "Pas de concept de \"forme\"", "to": "Équilibre de stress d'entraînement (charge vs tolérance)" },
+        { "from": "Pas de tendances de phases de sommeil", "to": "Chronologie d'architecture de sommeil" },
+        { "from": "Pas d'insights narratifs", "to": "Moteur \"Pourquoi je me sens mal?\"" },
+        { "from": "Données 28 jours uniquement", "to": "Tendances historiques illimitées" }
+      ]
+    },
+    "useCases": {
+      "title": "pour tout le monde",
+      "heading": "Qui que vous soyez, vos données doivent travailler pour vous",
+      "description": "polar.is est conçu pour tous les types d'athlètes — des guerriers du week-end aux coaches d'élite.",
+      "runner": {
+        "label": "pour le coureur",
+        "title": "\"Dois-je courir aujourd'hui?\"",
+        "description": "Un chiffre. Une réponse. Votre score de readiness vous dit si votre corps est prêt pour des intervalles, de l'endurance ou du repos."
+      },
+      "triathlete": {
+        "label": "pour le triathlète",
+        "title": "\"Suis-je en surentraînement sur trois sports?\"",
+        "description": "Charge d'entraînement cumulée sur natation, vélo et course. Repérez la fatigue cumulative avant qu'elle ne devienne blessure."
+      },
+      "strength": {
+        "label": "pour le culturiste",
+        "title": "\"Mon SNC est-il récupéré?\"",
+        "description": "HRV et charge ANS révèlent la récupération autonome — la pièce manquante pour savoir quand soulever lourd à nouveau."
+      },
+      "coach": {
+        "label": "pour le coach",
+        "title": "\"Comment va mon équipe ce matin?\"",
+        "description": "Voyez la readiness de chaque athlète en un coup d'œil. Vert = go, jaune = modéré, rouge = repos."
+      },
+      "curious": {
+        "label": "pour le curieux",
+        "title": "\"Que sait vraiment ma montre sur moi?\"",
+        "description": "Transformez les données brutes Polar en histoires. Architecture de sommeil, empreintes de fitness, dette de récupération — enfin visualisées."
+      },
+      "mums": {
+        "label": "pour les mamans",
+        "title": "\"Quand ai-je bien dormi pour la dernière fois?\"",
+        "description": "Suivez la dette de sommeil à travers les nuits interrompues. Voyez votre tendance de récupération, pas juste le score de la nuit dernière."
+      },
+      "shiftWorkers": {
+        "label": "pour les travailleurs de nuit",
+        "title": "\"Mon corps supporte-t-il les nuits?\"",
+        "description": "Voyez comment les quarts de nuit détruisent votre récupération en données réelles. Suivez le déclin HRV et l'effondrement de la qualité de sommeil."
+      }
+    },
+    "footer": {
+      "brand": "non affilié à Polar Electro Oy · polaris.app",
+      "uicons": "Uicons par Flaticon"
+    }
+  },
+  "dashboard": {
+    "setup": {
+      "title": "Connecter votre compte Polar",
+      "description": "Connectez-vous avec Polar pour voir vos données de santé. OAuth sécurisé — nous ne voyons jamais votre mot de passe.",
+      "signIn": "Se connecter avec Polar",
+      "consent": "J'accepte que polar.is traite mes données de santé Polar dans le but d'afficher mon tableau de bord.",
+      "privacyNotice": "Avis de confidentialité",
+      "demo": "Voir la démo",
+      "explore": "Vous voulez juste explorer? Essayez la démo."
+    },
+    "privacyModal": {
+      "title": "Avis de confidentialité",
+      "whatData": "Quelles données nous traitons",
+      "whatDataText": "Nous accédons à vos données Polar Flow (sommeil, fréquence cardiaque, activité, récupération) via l'API Polar AccessLink.",
+      "legalBasis": "Base légale",
+      "legalBasisText": "RGPD Article 6(1)(a) — votre consentement. Vous pouvez le retirer à tout moment en supprimant vos données.",
+      "storage": "Stockage des données",
+      "storageText": "Votre token de session est stocké chiffré dans Cloudflare KV pendant 30 jours. Nous ne stockons pas vos données de santé brutes de façon permanente.",
+      "sharing": "Partage de données",
+      "sharingText": "Nous ne vendons, partageons ou transférons jamais vos données à des tiers.",
+      "rights": "Vos droits",
+      "rightsText": "Accès, rectification, effacement, portabilité et restriction. Supprimez tout avec le bouton \"Supprimer les données\".",
+      "retention": "Conservation",
+      "retentionText": "Les données sont supprimées automatiquement après 30 jours d'inactivité, ou immédiatement en cliquant sur \"Supprimer les données\".",
+      "contact": "Contact",
+      "contactText": "Pour les questions de confidentialité, contactez-nous via le tableau de bord.",
+      "understand": "Je comprends"
+    },
+    "tabs": {
+      "overview": "Aperçu",
+      "today": "Aujourd'hui",
+      "heartRate": "Fréquence Cardiaque",
+      "sleep": "Sommeil",
+      "activity": "Activité",
+      "recovery": "Récupération",
+      "insights": "Insights",
+      "compare": "Comparer"
+    },
+    "period": "Période",
+    "refresh": "Actualiser",
+    "synced": "SYNCHRONISÉ",
+    "noData": {
+      "title": "Aucune donnée trouvée",
+      "description": "Votre compte Polar n'a pas de données pour la période sélectionnée. Synchronisez votre montre avec l'app Polar Flow."
+    },
+    "stats": {
+      "rhr": "FC au repos",
+      "hrv": "HRV (RMSSD)",
+      "steps": "Pas aujourd'hui",
+      "sleep": "Sommeil dernière nuit",
+      "avgSteps": "Moy. pas",
+      "avgKcal": "Moy. kcal actives",
+      "goalDays": "Jours ≥ 10k pas",
+      "avgActive": "Moy. temps actif",
+      "avgHrv": "Moy. HRV (RMSSD)",
+      "avgAns": "Moy. charge ANS",
+      "avgRecharge": "Moy. recharge nocturne",
+      "avgBreathing": "Moy. fréquence respiratoire",
+      "avgSleep": "Moy. sommeil",
+      "avgScore": "Moy. score",
+      "nights7h": "Nuits ≥ 7h"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "profile": "Profil",
+      "name": "Nom",
+      "avatar": "Avatar",
+      "colors": "Couleurs",
+      "disconnect": "Déconnecter",
+      "deleteData": "Supprimer les données",
+      "deleteAccount": "Supprimer le compte"
+    }
+  },
+  "auth": {
+    "loggedIn": "Connecté",
+    "loggedOut": "Déconnecté",
+    "sessionExpired": "Session expirée"
+  }
+}

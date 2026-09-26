@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "Polar.is",
+    "description": "Your training data. Finally clear."
+  },
+  "nav": {
+    "features": "features",
+    "dashboard": "dashboard",
+    "getStarted": "get started"
+  },
+  "landing": {
+    "hero": {
+      "badge": "works with all Polar watches & accounts",
+      "heading": "Your training data. Finally clear.",
+      "description": "Polar.is simplifies your Polar device data into one beautiful daily view — sleep, recovery, load and trends at a glance. Works with every Polar watch from the Vantage series to the Ignite. Just connect your existing Polar Flow account. Your data stays yours: encrypted sessions, no selling, no third-party trackers. Delete everything with one click.",
+      "ctaPrimary": "connect your Polar →",
+      "ctaSecondary": "see a demo"
+    },
+    "features": {
+      "title": "why polar.is",
+      "heading": "Built for athletes who care about their numbers",
+      "description": "Polar Flow shows you everything. polar.is shows you what matters.",
+      "trendView": {
+        "title": "30-day trend view",
+        "description": "HRV, sleep and load over time on one screen. Spot patterns Polar Flow buries in menus."
+      },
+      "zoneClarity": {
+        "title": "Zone clarity",
+        "description": "Every session tagged zone 1 or zone 3. See your polarised training balance at a glance."
+      },
+      "sleepRecovery": {
+        "title": "Sleep × recovery",
+        "description": "Nightly recharge and HRV correlated automatically. Know if you should push or rest."
+      },
+      "coachDashboard": {
+        "title": "Coach dashboard",
+        "description": "Monitor all your athletes in one view. Shareable readiness links. No extra accounts needed."
+      }
+    },
+    "comparison": {
+      "title": "comparison",
+      "heading": "Polar Flow vs polar.is",
+      "description": "What you get when you go beyond the default",
+      "items": [
+        { "from": "Sleep score = single number", "to": "Correlated with training load, HRV, recovery debt" },
+        { "from": "Nightly Recharge buried in menus", "to": "Morning briefing with readiness ring + recommendation" },
+        { "from": "Activity = step bar chart", "to": "Recovery vs activity balance with debt tracking" },
+        { "from": "Workouts = isolated events", "to": "Fitness trajectory over months" },
+        { "from": "HR zones = per-workout only", "to": "Weekly distribution across all activities" },
+        { "from": "No \"form\" concept", "to": "Training stress balance (load vs tolerance)" },
+        { "from": "No sleep stage trends", "to": "Sleep architecture timeline" },
+        { "from": "No narrative insights", "to": "\"Why do I feel like crap?\" engine" },
+        { "from": "28-day data only", "to": "Unlimited historical trends" }
+      ]
+    },
+    "useCases": {
+      "title": "for every one",
+      "heading": "Whoever you are, your data should work for you",
+      "description": "polar.is is built for every kind of athlete — from weekend warriors to elite coaches.",
+      "runner": {
+        "label": "for the runner",
+        "title": "\"Should I run today?\"",
+        "description": "One number. One answer. Your readiness score tells you if your body is primed for intervals, steady state, or rest. No more guessing after a bad night's sleep."
+      },
+      "triathlete": {
+        "label": "for the triathlete",
+        "title": "\"Am I overreaching across three sports?\"",
+        "description": "Training load stacked across swim, bike, and run. Spot cumulative fatigue before it becomes injury. Know when to swap a brick session for recovery."
+      },
+      "strength": {
+        "label": "for the strength athlete",
+        "title": "\"Is my CNS recovered?\"",
+        "description": "HRV and ANS charge reveal autonomic recovery — the missing piece for knowing when to lift heavy again. Stop leaving gains on the table from under-recovery."
+      },
+      "coach": {
+        "label": "for the coach",
+        "title": "\"How's my squad looking this morning?\"",
+        "description": "See every athlete's readiness at a glance. Green = go, yellow = moderate, red = rest. No spreadsheets required. Spot overreaching before it becomes injury."
+      },
+      "curious": {
+        "label": "for the curious",
+        "title": "\"What does my watch actually know about me?\"",
+        "description": "Turn raw Polar data into stories. Sleep architecture, fitness fingerprints, recovery debt — finally visualised."
+      },
+      "mums": {
+        "label": "for mums",
+        "title": "\"When did I last sleep properly?\"",
+        "description": "Track sleep debt across broken nights. See your recovery trend, not just last night's score. Know when your body is asking for rest."
+      },
+      "shiftWorkers": {
+        "label": "for shift workers",
+        "title": "\"Is my body coping with nights?\"",
+        "description": "See how night shifts wreck your recovery in real data. Track HRV decline, sleep quality collapse, and cumulative fatigue."
+      }
+    },
+    "footer": {
+      "brand": "not affiliated with Polar Electro Oy · polaris.app",
+      "uicons": "Uicons by Flaticon"
+    }
+  },
+  "dashboard": {
+    "setup": {
+      "title": "Connect your Polar account",
+      "description": "Sign in with Polar to view your health data. Secure OAuth — we never see your password.",
+      "signIn": "Sign in with Polar",
+      "consent": "I agree to polar.is processing my Polar health data for the purpose of displaying my dashboard.",
+      "privacyNotice": "Privacy Notice",
+      "demo": "View Demo",
+      "explore": "Just want to explore? Try the demo."
+    },
+    "privacyModal": {
+      "title": "Privacy Notice",
+      "whatData": "What data we process",
+      "whatDataText": "We access your Polar Flow data (sleep, heart rate, activity, recovery) via the Polar AccessLink API to display your personal dashboard.",
+      "legalBasis": "Legal basis",
+      "legalBasisText": "GDPR Article 6(1)(a) — your consent. You can withdraw it anytime by deleting your data.",
+      "storage": "Data storage",
+      "storageText": "Your session token is stored encrypted in Cloudflare KV for 30 days. We do not store your raw health data permanently.",
+      "sharing": "Data sharing",
+      "sharingText": "We do not sell, share, or transfer your data to any third party. Ever.",
+      "rights": "Your rights",
+      "rightsText": "Access, rectification, erasure, portability, and restriction. Delete everything with the \"Delete Data\" button at any time.",
+      "retention": "Retention",
+      "retentionText": "Data is deleted automatically after 30 days of inactivity, or immediately when you click \"Delete Data\".",
+      "contact": "Contact",
+      "contactText": "For privacy questions, contact us through the dashboard.",
+      "understand": "I understand"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "today": "Today",
+      "heartRate": "Heart Rate",
+      "sleep": "Sleep",
+      "activity": "Activity",
+      "recovery": "Recovery",
+      "insights": "Insights",
+      "compare": "Compare"
+    },
+    "period": "Period",
+    "refresh": "Refresh",
+    "synced": "SYNCED JUST NOW",
+    "noData": {
+      "title": "No data found",
+      "description": "Your Polar account doesn't have data for the selected period. Sync your watch with the Polar Flow app — open the app on your phone, pull down to refresh, and wait for the sync to complete."
+    },
+    "stats": {
+      "rhr": "Resting HR",
+      "hrv": "HRV (RMSSD)",
+      "steps": "Steps Today",
+      "sleep": "Last Night Sleep",
+      "avgSteps": "Avg Steps",
+      "avgKcal": "Avg Active kcal",
+      "goalDays": "Days ≥ 10k steps",
+      "avgActive": "Avg Active Time",
+      "avgHrv": "Avg HRV (RMSSD)",
+      "avgAns": "Avg ANS Charge",
+      "avgRecharge": "Avg Nightly Recharge",
+      "avgBreathing": "Avg Breathing Rate",
+      "avgSleep": "Avg Sleep",
+      "avgScore": "Avg Score",
+      "nights7h": "Nights ≥ 7h"
+    },
+    "settings": {
+      "title": "Settings",
+      "profile": "Profile",
+      "name": "Name",
+      "avatar": "Avatar",
+      "colors": "Colours",
+      "disconnect": "Disconnect",
+      "deleteData": "Delete Data",
+      "deleteAccount": "Delete Account"
+    }
+  },
+  "auth": {
+    "loggedIn": "Logged in",
+    "loggedOut": "Logged out",
+    "sessionExpired": "Session expired"
+  }
+}

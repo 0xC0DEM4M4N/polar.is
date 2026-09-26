@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-mint: #5DCAA5;
+  --color-mint-dim: rgba(93, 202, 165, 0.1);
+  --color-mint-border: rgba(93, 202, 165, 0.3);
+  --color-dark: #0c0c14;
+  --color-surface: #13131e;
+  --color-surface-light: #1a1a28;
+  --color-surface-border: rgba(255, 255, 255, 0.07);
+  --color-chart-red: #e8304a;
+  --color-chart-blue: #378ADD;
+  --color-chart-orange: #EF9F27;
+  --color-chart-purple: #a78bfa;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+/* ── DARK (default) ── */
+:root {
+  --bg: #0c0c14;
+  --surface: #13131e;
+  --surface-light: #1a1a28;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --text: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.5);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --input-bg: #1a1a28;
+  --gauge-track: #1a1a28;
+  --chart-grid: rgba(255, 255, 255, 0.05);
+  --spinner-track: rgba(255, 255, 255, 0.1);
+  --scrollbar-track: #0c0c14;
+  --scrollbar-thumb: #1a1a28;
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.3);
+  --error-text: #f87171;
+}
+
+/* ── LIGHT ── */
+html.light,
+.light {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-light: #f0f1f5;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.18);
+  --text: #1a1a2e;
+  --text-dim: rgba(0, 0, 0, 0.5);
+  --text-muted: rgba(0, 0, 0, 0.35);
+  --input-bg: #f0f1f5;
+  --gauge-track: #e8e9ef;
+  --chart-grid: rgba(0, 0, 0, 0.06);
+  --spinner-track: rgba(0, 0, 0, 0.1);
+  --scrollbar-track: #f6f7f9;
+  --scrollbar-thumb: #d1d5db;
+  --error-bg: rgba(239, 68, 68, 0.08);
+  --error-border: rgba(239, 68, 68, 0.25);
+  --error-text: #dc2626;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+/* Gauge */
+.gauge-wrap {
+  position: relative;
+  width: 150px;
+  height: 80px;
+  overflow: hidden;
+  margin: 0 auto 10px;
+}
+.gauge-arc {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 12px solid var(--gauge-track);
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  top: 0;
+  transform: rotate(225deg);
+  transition: border-color 0.3s;
+}
+.gauge-fill {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 12px solid transparent;
+  border-top-color: #5DCAA5;
+  border-left-color: #5DCAA5;
+  position: absolute;
+  top: 0;
+  transform-origin: center;
+  transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.gauge-num {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--spinner-track);
+  border-top-color: #5DCAA5;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.sync-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5DCAA5;
+  box-shadow: 0 0 8px #5DCAA5;
+  animation: pulse 2s infinite;
+  margin-right: 6px;
+}
+
+/* Theme button */
+.theme-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+}
+.theme-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
+/* Card hover */
+.card-hover {
+  transition: border-color 0.2s, background 0.3s;
+}
+.card-hover:hover {
+  border-color: var(--border-hover) !important;
+}
+
+/* Pill active */
+.pill-active {
+  background: #5DCAA5 !important;
+  color: #0c0c14 !important;
+  border-color: #5DCAA5 !important;
+}
+html.light .pill-active {
+  background: #5DCAA5 !important;
+  color: #0c0c14 !important;
+  border-color: #5DCAA5 !important;
+}
+
+/* Date input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+}
+html.light input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.3);
+}

@@ -1,0 +1,12 @@
+name = "polaris-next"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = ".vercel/output/static"
+
+# KV namespace for sessions
+[[kv_namespaces]]
+binding = "POLAR_SESSIONS"
+id = "1f10cde899c847bcae5048beb3a29e0d"
+
+[vars]
+POLAR_CLIENT_ID = "9eab5c3c-33ae-41c0-a029-8f844033e8a3"
+REDIRECT_URI = "https://polaris-6hn.pages.dev/en-gb/api/auth/callback"
