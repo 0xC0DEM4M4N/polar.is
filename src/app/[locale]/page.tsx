@@ -4,8 +4,6 @@ import { FeaturesGrid } from "@/components/landing/features-grid";
 import { Comparison } from "@/components/landing/comparison";
 import { UseCases } from "@/components/landing/use-cases";
 import { Footer } from "@/components/landing/footer";
-export const runtime = "edge";
-
 export default function LandingPage() {
   return (
     <div className="max-w-[680px] mx-auto">

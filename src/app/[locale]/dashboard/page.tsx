@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 
 export default function DashboardPage() {

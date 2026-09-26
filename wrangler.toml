@@ -1,6 +1,24 @@
 name = "polaris-next"
-compatibility_date = "2024-01-01"
-pages_build_output_dir = ".vercel/output/static"
+main = ".open-next/worker.js"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Required by OpenNext for internal Worker-to-Worker requests (ISR/revalidation).
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "polaris-next"
+
+# TODO: add a custom domain route once one is configured in the Cloudflare
+# dashboard (Workers & Pages -> polaris-next -> Settings -> Domains & Routes),
+# then update REDIRECT_URI below (and the redirect URI registered with Polar)
+# to match it. Until then this Worker is only reachable at its *.workers.dev URL.
+# [[routes]]
+# pattern = "your-custom-domain.com/*"
+# custom_domain = true
 
 # KV namespace for sessions
 [[kv_namespaces]]

@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import { getKV } from "@/lib/kv";
 
 const POLAR_TOKEN_URL = "https://polarremote.com/v2/oauth2/token";

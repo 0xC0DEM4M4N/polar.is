@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import { getKV } from "@/lib/kv";
 
 const POLAR_BASE = "https://www.polaraccesslink.com";

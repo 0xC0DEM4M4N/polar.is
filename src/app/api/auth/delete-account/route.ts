@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import { getKV } from "@/lib/kv";
 
 function parseCookies(header: string | null): Record<string, string> {

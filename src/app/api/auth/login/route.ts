@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import { getKV } from "@/lib/kv";
 
 const POLAR_AUTH_URL = "https://flow.polar.com/oauth2/authorization";

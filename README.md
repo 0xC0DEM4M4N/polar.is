@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# polar.is
 
-## Getting Started
+A Next.js dashboard for Polar (polar.com) fitness data, deployed to Cloudflare Workers via the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare) (`@opennextjs/cloudflare`). Authentication is a Polar OAuth flow backed by a Cloudflare KV session store.
 
-First, run the development server:
+## Prerequisites
+
+- Node.js 20.3+ (wrangler is pinned to `4.80.0`, the last line supporting Node 20 — upgrade to Node 22+ and unpin wrangler if you want the latest version)
+- A [Polar](https://www.polar.com/accesslink-api/) AccessLink API application (for `POLAR_CLIENT_ID` / `POLAR_CLIENT_SECRET`)
+- [Wrangler](https://developers.cloudflare.com/workers/wrangler/) (installed as a dev dependency) if you want to deploy or run against real KV
+
+## Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create the local env files (both are gitignored):
+
+`.env.local` — public/non-secret local vars:
+
+```bash
+POLAR_CLIENT_ID=your-polar-client-id
+REDIRECT_URI=http://localhost:3001/en-gb/api/auth/callback
+```
+
+`.dev.vars` — secrets, used by `wrangler`/local Cloudflare runtime:
+
+```bash
+POLAR_CLIENT_SECRET=your-polar-client-secret
+REDIRECT_URI=http://localhost:3001/en-gb/api/auth/callback
+```
+
+`REDIRECT_URI` must exactly match a redirect URI registered on your Polar application, and must include the locale prefix (e.g. `/en-gb/`).
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Runs the Next.js dev server on [http://localhost:3001](http://localhost:3001) (not the default 3000). Routes are locale-prefixed, e.g. `http://localhost:3001/en-gb`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Supported locales live in `src/lib/i18n/routing.ts` and `src/messages/*.json`: `en-gb` (default), `en-us`, `fr-fr`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`next.config.ts` calls `initOpenNextCloudflareForDev()`, which wires up local Cloudflare bindings (KV, etc.) for `next dev`. Outside that, `src/lib/kv.ts` also falls back to a no-op mock for the `POLAR_SESSIONS` KV binding so the app renders without crashing even if bindings aren't available.
 
-## Learn More
+## Linting
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploying to Cloudflare Workers
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Build and deploy from the CLI:
 
-## Deploy on Vercel
+```bash
+npm run deploy
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This runs `opennextjs-cloudflare build` (producing `.open-next/worker.js` and `.open-next/assets`) followed by `opennextjs-cloudflare deploy`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To build and run a local preview against the Workers runtime without deploying:
+
+```bash
+npm run preview
+```
+
+Cloudflare project configuration (KV binding, assets, compatibility flags, vars) lives in `wrangler.toml`. Set `POLAR_CLIENT_SECRET` as an encrypted secret via `npx wrangler secret put POLAR_CLIENT_SECRET` (do not add it to `wrangler.toml`).
+
+### Custom domain
+
+This Worker is currently only reachable at its `*.workers.dev` URL. To keep a stable domain (and avoid updating the Polar OAuth redirect URI every time you redeploy):
+
+1. In the Cloudflare dashboard: **Workers & Pages → polaris-next → Settings → Domains & Routes**, add a custom domain.
+2. Uncomment and fill in the `[[routes]]` block in `wrangler.toml` to match.
+3. Update `REDIRECT_URI` in `wrangler.toml` (and in the Polar developer portal) to use that domain.
+
+### Migration note
+
+This project previously deployed to Cloudflare Pages via `@cloudflare/next-on-pages` (now deprecated in favor of OpenNext). If you see a Pages project still live at the old `*.pages.dev` URL, it's stale once the Worker deployment above takes over — decommission it once the new deployment and domain/redirect URI are confirmed working.
